@@ -95,6 +95,7 @@ def describe_match(match_data):
             description = describe_team(tla, teams_data)
             teams.append(description)
 
+        teams = [t for t in teams if t is not None]
         assert len(teams) > 1
         teams_str = ", ".join(teams[:-1])
         teams_str += " and " + teams[-1]
