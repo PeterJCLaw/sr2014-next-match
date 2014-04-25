@@ -115,6 +115,7 @@ if __name__ == '__main__':
         test_dd(minutes = 1.5)
         test_dd(minutes = 5)
         test_dd(hours = 5)
+        test_dd(hours = 5, minutes = 10)
         test_dd(days = 5)
         test_dd(days = 5, hours = 2, minutes = 5)
         test_dd(days = 5, hours = 2, seconds = 5)
