@@ -3,6 +3,7 @@
 from collections import defaultdict
 from datetime import datetime, timedelta
 import dateutil.parser
+from dateutil.tz import tzlocal
 import requests
 import sys
 
@@ -52,8 +53,9 @@ def test_dd(*args, **kwargs):
 def time_until(when):
     dt = dateutil.parser.parse(when)
     #print dt
-    assert dt > datetime.now()
-    delta = dt - datetime.now()
+    now = datetime.now(tzlocal())
+    assert dt > now
+    delta = dt - now
 
     until = describe_delta(delta)
     return until
